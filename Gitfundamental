@@ -1,0 +1,187 @@
+jonas@pop-os:~$(__git_ps1)[$ cd ~/quest
+bash: cd: /home/jonas/quest: Aucun fichier ou dossier de ce type
+jonas@pop-os:~$(__git_ps1)[$ cd ~/quest/
+bash: cd: /home/jonas/quest/: Aucun fichier ou dossier de ce type
+jonas@pop-os:~$(__git_ps1)[$ cd jonas
+bash: cd: jonas: Aucun fichier ou dossier de ce type
+jonas@pop-os:~$(__git_ps1)[$ cd ~
+jonas@pop-os:~$(__git_ps1)[$ pwd
+/home/jonas
+jonas@pop-os:~$(__git_ps1)[$ ls
+bashrc  Documents  Images   Musique  quests           Vidéos
+Bureau  Downloads  Modèles  Public   Téléchargements
+jonas@pop-os:~$(__git_ps1)[$ cd quests
+jonas@pop-os:~/quests$(__git_ps1)[$ pwd
+/home/jonas/quests
+jonas@pop-os:~/quests$(__git_ps1)[$ mkdir git .
+mkdir: impossible de créer le répertoire «.»: Le fichier existe
+jonas@pop-os:~/quests$(__git_ps1)[$ mkdir git
+mkdir: impossible de créer le répertoire «git»: Le fichier existe
+jonas@pop-os:~/quests$(__git_ps1)[$ ls
+git  shell
+jonas@pop-os:~/quests$(__git_ps1)[$ cd git
+jonas@pop-os:~/quests/git$(__git_ps1)[$ pwd
+/home/jonas/quests/git
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git init
+Dépôt Git vide initialisé dans /home/jonas/quests/git/.git/
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git status
+Sur la branche master
+
+Aucun commit
+
+rien à valider (créez/copiez des fichiers et utilisez "git add" pour les suivre)
+jonas@pop-os:~/quests/git$(__git_ps1)[$ touch README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ ls
+README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git status
+Sur la branche master
+
+Aucun commit
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	README.md
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+jonas@pop-os:~/quests/git$(__git_ps1)[$ echo "Git fundamentals" > README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ echo README.md
+README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ cat README.md
+Git fundamentals
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git add README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git add .
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git status
+Sur la branche master
+
+Aucun commit
+
+Modifications qui seront validées :
+  (utilisez "git rm --cached <fichier>..." pour désindexer)
+	nouveau fichier : README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git commit -m "ceci est un commit"
+[master (commit racine) 4bc6201] ceci est un commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git checkout -b dev
+Basculement sur la nouvelle branche 'dev'
+jonas@pop-os:~/quests/git$(__git_ps1)[$ touch index.php
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git add index.php
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git commit -m "ce fichier est naze"
+[dev 0b5ef47] ce fichier est naze
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.php
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git checkout master
+Basculement sur la branche 'master'
+jonas@pop-os:~/quests/git$(__git_ps1)[$ git status
+Sur la branche master
+rien à valider, la copie de travail est propre
+jonas@pop-os:~/quests/git$(__git_ps1)[$ ls
+README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ pwd
+/home/jonas/quests/git
+jonas@pop-os:~/quests/git$(__git_ps1)[$ sudo apt install gitk
+[sudo] Mot de passe de jonas : 
+Lecture des listes de paquets... Fait
+Construction de l'arbre des dépendances       
+Lecture des informations d'état... Fait
+Les paquets suivants ont été installés automatiquement et ne sont plus nécessaires :
+  libfprint-2-tod1 libllvm9 libllvm9:i386
+Veuillez utiliser « sudo apt autoremove » pour les supprimer.
+Les paquets supplémentaires suivants seront installés : 
+  libtcl8.6 libtk8.6 tcl tcl8.6 tk tk8.6
+Paquets suggérés :
+  git-doc tcl-tclreadline
+Les NOUVEAUX paquets suivants seront installés :
+  gitk libtcl8.6 libtk8.6 tcl tcl8.6 tk tk8.6
+0 mis à jour, 7 nouvellement installés, 0 à enlever et 34 non mis à jour.
+Il est nécessaire de prendre 1.793 ko dans les archives.
+Après cette opération, 8.331 ko d'espace disque supplémentaires seront utilisés.
+Souhaitez-vous continuer ? [O/n] o
+Réception de :1 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libtcl8.6 amd64 8.6.10+dfsg-1 [902 kB]
+Réception de :2 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libtk8.6 amd64 8.6.10-1 [714 kB]
+Réception de :3 http://us.archive.ubuntu.com/ubuntu focal/main amd64 tk8.6 amd64 8.6.10-1 [12,5 kB]
+Réception de :4 http://us.archive.ubuntu.com/ubuntu focal/main amd64 tcl8.6 amd64 8.6.10+dfsg-1 [14,8 kB]
+Réception de :5 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 tcl amd64 8.6.9+1 [5.112 B]
+Réception de :6 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 tk amd64 8.6.9+1 [3.240 B]
+Réception de :7 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 gitk all 1:2.25.1-1ubuntu3 [142 kB]
+1.793 ko réceptionnés en 4s (407 ko/s)
+Sélection du paquet libtcl8.6:amd64 précédemment désélectionné.
+(Lecture de la base de données... 246870 fichiers et répertoires déjà installés.)
+Préparation du dépaquetage de .../0-libtcl8.6_8.6.10+dfsg-1_amd64.deb ...
+Dépaquetage de libtcl8.6:amd64 (8.6.10+dfsg-1) ...
+Sélection du paquet libtk8.6:amd64 précédemment désélectionné.
+Préparation du dépaquetage de .../1-libtk8.6_8.6.10-1_amd64.deb ...
+Dépaquetage de libtk8.6:amd64 (8.6.10-1) ...
+Sélection du paquet tk8.6 précédemment désélectionné.
+Préparation du dépaquetage de .../2-tk8.6_8.6.10-1_amd64.deb ...
+Dépaquetage de tk8.6 (8.6.10-1) ...
+Sélection du paquet tcl8.6 précédemment désélectionné.
+Préparation du dépaquetage de .../3-tcl8.6_8.6.10+dfsg-1_amd64.deb ...
+Dépaquetage de tcl8.6 (8.6.10+dfsg-1) ...
+Sélection du paquet tcl précédemment désélectionné.
+Préparation du dépaquetage de .../4-tcl_8.6.9+1_amd64.deb ...
+Dépaquetage de tcl (8.6.9+1) ...
+Sélection du paquet tk précédemment désélectionné.
+Préparation du dépaquetage de .../5-tk_8.6.9+1_amd64.deb ...
+Dépaquetage de tk (8.6.9+1) ...
+Sélection du paquet gitk précédemment désélectionné.
+Préparation du dépaquetage de .../6-gitk_1%3a2.25.1-1ubuntu3_all.deb ...
+Dépaquetage de gitk (1:2.25.1-1ubuntu3) ...
+Paramétrage de libtcl8.6:amd64 (8.6.10+dfsg-1) ...
+Paramétrage de tcl8.6 (8.6.10+dfsg-1) ...
+Paramétrage de libtk8.6:amd64 (8.6.10-1) ...
+Paramétrage de tcl (8.6.9+1) ...
+Paramétrage de tk8.6 (8.6.10-1) ...
+Paramétrage de tk (8.6.9+1) ...
+Paramétrage de gitk (1:2.25.1-1ubuntu3) ...
+Traitement des actions différées (« triggers ») pour man-db (2.9.1-1) ...
+Traitement des actions différées (« triggers ») pour libc-bin (2.31-0ubuntu9) ...
+jonas@pop-os:~/quests/git$(__git_ps1)[$ gitk
+jonas@pop-os:~/quests/git$(__git_ps1)[$ cd
+jonas@pop-os:~$(__git_ps1)[$ pwd
+/home/jonas
+jonas@pop-os:~$(__git_ps1)[$ cd jonas
+bash: cd: jonas: Aucun fichier ou dossier de ce type
+jonas@pop-os:~$(__git_ps1)[$ ls
+bashrc  Documents  Images   Musique  quests           Vidéos
+Bureau  Downloads  Modèles  Public   Téléchargements
+jonas@pop-os:~$(__git_ps1)[$ cd quests
+jonas@pop-os:~/quests$(__git_ps1)[$ ls
+git  shell
+jonas@pop-os:~/quests$(__git_ps1)[$ mkdir gitEx
+jonas@pop-os:~/quests$(__git_ps1)[$ cd gitEx
+jonas@pop-os:~/quests/gitEx$(__git_ps1)[$ git branch wcs
+fatal: ni ceci ni aucun de ses répertoires parents n'est un dépôt git : .git
+jonas@pop-os:~/quests/gitEx$(__git_ps1)[$ cd ..
+jonas@pop-os:~/quests$(__git_ps1)[$ remdir gitEx
+
+La commande « remdir » n'a pas été trouvée, voulez-vous dire :
+
+  commande « rmdir » du deb coreutils (8.30-3ubuntu2)
+  commande « redir » du deb redir (3.2-1)
+
+Essayez : sudo apt install <nom du deb>
+
+jonas@pop-os:~/quests$(__git_ps1)[$ rmdir gitEx
+jonas@pop-os:~/quests$(__git_ps1)[$ ls
+git  shell
+jonas@pop-os:~/quests$(__git_ps1)[$ cd git
+jonas@pop-os:~/quests/git$(__git_ps1)[$ ls
+README.md
+jonas@pop-os:~/quests/git$(__git_ps1)[$ mkdir gitEx
+jonas@pop-os:~/quests/git$(__git_ps1)[$ cd gitEx
+jonas@pop-os:~/quests/git/gitEx$(__git_ps1)[$ git branch wcs
+jonas@pop-os:~/quests/git/gitEx$(__git_ps1)[$ touch wild.html
+jonas@pop-os:~/quests/git/gitEx$(__git_ps1)[$ git status
+Sur la branche master
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	./
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+jonas@pop-os:~/quests/git/gitEx$(__git_ps1)[$ ls
+jonas@pop-os:~/quests/git/gitEx$(__git_ps1)[$ git commit -m "At wild Code School, we code without shoes"
+[master 5eac67f] At wild Code School, we code without shoes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 gitEx/wild.html
+jonas@pop-os:~/quests/git/gitEx$(__git_ps1)[$ gitk
